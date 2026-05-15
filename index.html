@@ -1,13 +1,67 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#eadfc8" />
-    <title>c.s_studiobeauty</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#eadfc8" />
+  <title>c.s_studiobeauty</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <main class="app-shell" id="app-shell" data-focused="false">
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+
+    <header class="studio-header">
+      <img src="img/logo.jpg" alt="Logo c.s_studiobeauty" class="logo" />
+      <h1>c.s_studiobeauty</h1>
+    </header>
+
+    <!-- Cards View -->
+    <section class="cards-stage" id="cards-stage">
+      <!-- Rendered dynamically -->
+    </section>
+
+    <!-- Focus View -->
+    <section class="focus-stage hidden" id="focus-stage">
+      <div class="focus-glow"></div>
+      <button class="back-button" id="back-button">Voltar</button>
+
+      <article class="focus-card">
+        <div class="focus-media">
+          <img id="focus-image" src="" alt="" />
+          <span class="cinema-sheen"></span>
+        </div>
+
+        <div class="focus-content">
+          <h2 id="focus-name"></h2>
+          <div class="services" id="focus-services">
+            <!-- Rendered dynamically -->
+          </div>
+
+          <button class="schedule-button" id="schedule-button">Agendar</button>
+
+          <!-- Booking Form -->
+          <form class="booking-form hidden" id="booking-form">
+            <select id="booking-service" aria-label="Serviço"></select>
+            <div class="input-group">
+              <input id="booking-name" placeholder="Nome" autocomplete="name" required />
+              <span id="name-error" class="error-message" style="display: none;"></span>
+            </div>
+            <div class="input-group">
+              <input id="booking-phone" placeholder="Telefone" autocomplete="tel" inputmode="tel" required
+                maxlength="15" />
+              <span id="phone-error" class="error-message" style="display: none;"></span>
+            </div>
+            <button type="submit" id="submit-booking">Confirmar</button>
+          </form>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+
 </html>
