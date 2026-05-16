@@ -133,11 +133,7 @@ function renderCards() {
       <div class="card-name">${prof.name}</div>
     `;
 
-    card.addEventListener('click', () => {
-      const message = "Oi tudo bem, gostaria de marcar um horario";
-      const url = `https://wa.me/${prof.phone}?text=${encodeURIComponent(message)}`;
-      window.open(url, '_blank', 'noopener,noreferrer');
-    });
+    card.addEventListener('click', () => openFocus(prof));
     cardsStage.appendChild(card);
   });
 }
